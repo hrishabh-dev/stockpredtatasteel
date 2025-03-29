@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style2.css')}}">
+    <title>Prediction page</title>
+</head>
+<body>
+    <div class="box">  <!-- Changed container to box -->
+        <div class="form-box">
+            <form action="{{ url_for('predict') }}" method="post">
+                <h2>Enter Prices</h2>
+                <div class="input-group">
+                    <label for="open_price">Opening Price:</label>
+                    <input type="number" id="open_price" name="open_price" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="low_price">Low Price:</label>
+                    <input type="number" id="low_price" name="low_price" step="0.01" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        {% if prediction_text %}
+        <div class="output-box">
+            <h3>{{ prediction_text }}</h3> <!-- Adding an <h3> tag for clarity -->
+        </div>
+        {% endif %}
+    </div>
+    <div class="warnings">
+        <footer>
+            <strong>Warning:</strong> This prediction is for informational purposes only. Do not use it for real-life trading. The financial market is risky, and you may lose money.
+            <p>Contact me for any query: hrishabh068@gmail.com</p>
+        </footer>
+    </div>
+</body>
+</html>
