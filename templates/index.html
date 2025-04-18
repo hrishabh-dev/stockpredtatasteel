@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',path='style.css')}}">
     <title>Tata Price Prediction</title>
 </head>
 <body>
@@ -11,26 +11,18 @@
         <div class="nav">
             <h1>Tata Steel Ltd</h1>
         </div>
-        <form action="{{ url_for('predict') }}">
-            <div class="txt">
-                <p>Tata Steel group is among the top global steel companies with an annual crude steel capacity of 34 million tonnes per annum. It is one of the world's most geographically-diversified steel producers, with operations and commercial presence across the world. The group (excluding SEA operations) recorded a consolidated turnover of US $19.7 billion in the financial year ending March 31, 2020.
-    
-                    A Great Place to Work-CertifiedTM organisation, Tata Steel Ltd., together with its subsidiaries, associates and joint ventures, is spread across five continents with an employee base of over 65,000.</p>
-            </div>
-            <div class="txt1" >
-                <p><br>Tata Steel has been a part of the DJSI Emerging Markets Index since 2012 and has been consistently ranked amongst top 5 steel companies in the DJSI Corporate Sustainability Assessment since 2016. Besides being a member of ResponsibleSteelTM and worldsteel’s Climate Action Programme, Tata Steel has won several awards and recognitions including the World Economic Forum’s Global Lighthouse recognition for its Kalinganagar Plant - a first in India, and Prime Minister’s Trophy for the best performing integrated steel plant for 2016-17. </p>
-            </div>
-            <div class="strt">
-                <center><h2><b>Welcome to the Tata Steel Price Prediction Web Application</b></h2></center>
-
-                <p class="para">This machine learning model designed to predict Tata Steel prices. To begin the prediction process, please click the "Start Prediction" button below.</p>
-                    <button type="submit" id="btn1">Start Prediction</button> 
-        </form>
-                
-            </div>
-
-        </form>
+        <div class="txt">
+            <p>Tata Steel group is among the top global steel companies with an annual crude steel capacity of 34 million tonnes per annum. It is one of the world's most geographically-diversified steel producers, with operations and commercial presence across the world. The group (excluding SEA operations) recorded a consolidated turnover of US $19.7 billion in the financial year ending March 31, 2020.</p>
+            <p>A Great Place to Work-CertifiedTM organisation, Tata Steel Ltd., together with its subsidiaries, associates and joint ventures, is spread across five continents with an employee base of over 65,000.</p>
+        </div>
+        <div class="txt1" >
+            <p><br>Tata Steel has been a part of the DJSI Emerging Markets Index since 2012 and has been consistently ranked amongst top 5 steel companies in the DJSI Corporate Sustainability Assessment since 2016. Besides being a member of ResponsibleSteelTM and worldsteel’s Climate Action Programme, Tata Steel has won several awards and recognitions including the World Economic Forum’s Global Lighthouse recognition for its Kalinganagar Plant - a first in India, and Prime Minister’s Trophy for the best performing integrated steel plant for 2016-17. </p>
+        </div>
+        <div class="strt">
+            <center><h2><b>Welcome to the Tata Steel Price Prediction Web Application</b></h2></center>
+            <p class="para">This machine learning model designed to predict Tata Steel prices. To begin the prediction process, please click the "Start Prediction" button below.</p>
+            <a href="/predict"> <button id="btn1">Start Prediction</button> </a>
+        </div>
     </div>
-    
 </body>
 </html>
