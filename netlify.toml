@@ -1,0 +1,14 @@
+[build]
+  command = "pip install -r requirements.txt"
+  publish = "static" # Or wherever your static files are
+
+[dev]
+  command = "uvicorn app:app --reload --port 8888"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[functions]]
+  directory = "netlify/functions"
