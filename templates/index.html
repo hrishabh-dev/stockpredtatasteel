@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',path='style.css')}}">
-    <title>Tata Price Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static',path='style2.css')}}">
+    <title>Prediction page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
-            <h1>Tata Steel Ltd</h1>
+    <div class="box">  <!-- Changed container to box -->
+        <div class="form-box">
+            <form action="{{ url_for('predict') }}" method="post">
+                <h2>Enter Prices</h2>
+                <div class="input-group">
+                    <label for="open_price">Opening Price:</label>
+                    <input type="number" id="open_price" name="open_price" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="low_price">Low Price:</label>
+                    <input type="number" id="low_price" name="low_price" step="0.01" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
         </div>
-        <div class="txt">
-            <p>Tata Steel group is among the top global steel companies with an annual crude steel capacity of 34 million tonnes per annum. It is one of the world's most geographically-diversified steel producers, with operations and commercial presence across the world. The group (excluding SEA operations) recorded a consolidated turnover of US $19.7 billion in the financial year ending March 31, 2020.</p>
-            <p>A Great Place to Work-CertifiedTM organisation, Tata Steel Ltd., together with its subsidiaries, associates and joint ventures, is spread across five continents with an employee base of over 65,000.</p>
+        {% if prediction_text %}
+        <div class="output-box">
+            <h3>{{ prediction_text }}</h3> <!-- Adding an <h3> tag for clarity -->
         </div>
-        <div class="txt1" >
-            <p><br>Tata Steel has been a part of the DJSI Emerging Markets Index since 2012 and has been consistently ranked amongst top 5 steel companies in the DJSI Corporate Sustainability Assessment since 2016. Besides being a member of ResponsibleSteelTM and worldsteel’s Climate Action Programme, Tata Steel has won several awards and recognitions including the World Economic Forum’s Global Lighthouse recognition for its Kalinganagar Plant - a first in India, and Prime Minister’s Trophy for the best performing integrated steel plant for 2016-17. </p>
-        </div>
-        <div class="strt">
-            <center><h2><b>Welcome to the Tata Steel Price Prediction Web Application</b></h2></center>
-            <p class="para">This machine learning model designed to predict Tata Steel prices. To begin the prediction process, please click the "Start Prediction" button below.</p>
-            <a href="/predict"> <button id="btn1">Start Prediction</button> </a>
-        </div>
+        {% endif %}
+    </div>
+    <div class="warnings">
+        <footer>
+            <strong>Warning:</strong> This prediction is for informational purposes only. Do not use it for real-life trading. The financial market is risky, and you may lose money.
+            <p>Contact me for any query: hrishabh068@gmail.com</p>
+        </footer>
     </div>
 </body>
 </html>
