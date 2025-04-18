@@ -20,7 +20,7 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib==1.4.2
 keras==3.9.2
-libclang==1.8.1  # Your log shows 1.8.1 now, keep it
+libclang==18.1.1 # Your log shows 1.8.1 now, keep it
 Markdown==3.8
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
