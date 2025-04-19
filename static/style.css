@@ -1,75 +1,111 @@
-body{
+body {
     display: flex;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Add a default sans-serif font for better readability */
 }
-.container{
+
+.container {
     background-color: rgb(244, 187, 113);
-    height: 900px;
-
-
+    width: 95%; /* Make the container take up most of the screen width */
+    max-width: 900px; /* But don't let it get wider than your desktop layout */
+    height: auto; /* Allow the height to adjust based on content */
+    margin: 20px auto; /* Center the container horizontally with some top/bottom margin */
 }
-.nav{
+
+.nav {
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 900px;
     justify-content: center;
     align-items: center;
     background-color: rgb(90, 208, 224);
-    margin-top: 0.4%;
-    border-radius: 1%;
-    border-color: 2px solid black;
-    margin-left: 20%;
-
-}
-.txt{
-    display: flex;
-    font-size: large;
-    margin-top: 4%;
-    width: 60%;
-    margin-left: 2%;
-    background-color: aquamarine;
-    padding-left: 9px; 
-    border-color: solid black;
-    border-radius: 6px;
-    border-style: dashed;
-}
-.txt1{
-    display: flex;
-    font-size: large;
-    margin-top: 2%;
-    width: 60%;
-    margin-left: 2%;
-    padding-bottom: 1%;
-    background-color: aquamarine;
-    padding-left: 9px; 
-    border-color: solid black;
-    border-radius: 6px;
-    border-style: dashed;
-    margin-bottom: 6%;
-    margin-top: 4%;
+    margin-top: 10px; /* Adjust top margin */
+    border-radius: 5px; /* Adjust border radius */
+    border: 2px solid black; /* Shorthand for border */
+    padding: 15px; /* Add some padding inside the nav */
+    width: 100%; /* Make the nav take the full width of the container */
+    margin-left: 0; /* Remove the fixed left margin */
 }
 
-.strt{
+.nav h1 {
+    font-size: 1.5em; /* Make the heading scale down on smaller screens */
+    text-align: center; /* Ensure the heading is centered */
+}
+
+.txt,
+.txt1 {
+    font-size: 1em; /* Adjust font size for better readability on mobile */
+    margin-top: 20px; /* Adjust top margin */
+    width: 95%; /* Take up most of the container width */
+    margin-left: auto; /* Center horizontally within the container */
+    margin-right: auto;
+    background-color: aquamarine;
+    padding: 15px; /* Add padding all around */
+    border: 2px dashed black; /* Shorthand for border */
+    border-radius: 6px;
+    margin-bottom: 20px; /* Adjust bottom margin */
+}
+
+.strt {
     display: flex;
-    position: absolute;
-    top: 32%;
-    flex-direction: column; /* Stack content vertically */
-    align-items: flex-end;
-    margin-top: 35x;
-    margin-left:1060px ;
-    margin-bottom: 50%;
-    width: 25%;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the div */
+    margin-top: 30px; /* Adjust top margin */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+    margin-bottom: 30px; /* Adjust bottom margin */
+    width: 80%; /* Make it wider on mobile */
     background-color: burlywood;
-    border-style: dotted;
-    border-color: blue 2px solid;
+    border: 2px dotted blue; /* Shorthand for border */
     border-radius: 3px;
-    
+    padding: 20px; /* Add padding */
+    position: static; /* Allow it to flow naturally in the document */
+    top: auto; /* Reset top */
 }
-#btn1{
-    margin-right: 140px;
-    
+
+#btn1 {
+    margin-right: 0; /* Remove right margin */
+    padding: 10px 20px; /* Add some padding to the button */
+    font-size: 1em;
 }
-.para{
-    margin-left: 10px;
-    margin-top: 8px;
+
+.para {
+    margin: 10px 0; /* Adjust margins */
+    text-align: center; /* Center the paragraph text */
+}
+
+/* Media Query for screens smaller than 768px (typical for tablets and phones) */
+@media screen and (max-width: 768px) {
+    .nav h1 {
+        font-size: 1.2em; /* Further reduce font size on very small screens */
+    }
+
+    .txt,
+    .txt1 {
+        font-size: 0.9em;
+    }
+
+    .strt {
+        width: 95%; /* Take up even more width on smaller screens */
+    }
+
+    #btn1 {
+        font-size: 0.9em;
+    }
+}
+
+/* You can add more media queries for even smaller screens if needed */
+@media screen and (max-width: 480px) {
+    .nav h1 {
+        font-size: 1em;
+    }
+
+    .txt,
+    .txt1 {
+        font-size: 0.85em;
+    }
 }
