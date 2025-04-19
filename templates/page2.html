@@ -7,7 +7,7 @@
     <title>Prediction page</title>
 </head>
 <body>
-    <div class="box">  <!-- Changed container to box -->
+    <div class="box">
         <div class="form-box">
             <form action="{{ url_for('predict') }}" method="post">
                 <h2>Enter Prices</h2>
@@ -26,7 +26,7 @@
         </div>
         {% if prediction_text %}
         <div class="output-box">
-            <h3>{{ prediction_text }}</h3> <!-- Adding an <h3> tag for clarity -->
+            <h3>{{ prediction_text }}</h3>
         </div>
         {% endif %}
     </div>
