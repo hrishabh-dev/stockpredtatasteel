@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column; /* Stack items vertically in the body */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -7,114 +8,85 @@ body {
     padding-bottom: 60px;
     box-sizing: border-box;
     font-family: sans-serif;
-    background-color: rgb(244, 187, 113); /* Set the body background to your yellowish color */
+    background-color: rgb(244, 187, 113);
 }
 
 .container {
-    background-color: rgb(244, 187, 113); /* You can keep this as well */
+    background-color: rgb(244, 187, 113);
     width: 95%;
     max-width: 900px;
     height: auto;
     margin: 20px auto;
+    display: flex; /* Use flexbox for the container to manage child layout */
+    flex-direction: column; /* Stack elements within the container */
+    align-items: center; /* Center items horizontally within the container */
 }
 
 .nav {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
-    width: 900px;
+    width: 100%; /* Take full width of the container */
     justify-content: center;
     align-items: center;
     background-color: rgb(90, 208, 224);
-    margin-top: 0.4%;
-    border-radius: 1%;
+    margin-top: 10px;
+    border-radius: 5px;
     border: 2px solid black;
-    margin-left: 20%;
+    padding: 15px;
 }
 
-.txt {
-    display: flex;
-    font-size: large;
-    margin-top: 4%;
-    width: 60%;
-    margin-left: 2%;
-    background-color: aquamarine;
-    padding-left: 9px;
-    border-color: solid black;
-    border-radius: 6px;
-    border-style: dashed;
-}
-
+.txt,
 .txt1 {
-    display: flex;
     font-size: large;
-    margin-top: 2%;
-    width: 60%;
-    margin-left: 2%;
-    padding-bottom: 1%;
+    margin-top: 20px;
+    width: 95%;
     background-color: aquamarine;
-    padding-left: 9px;
-    border-color: solid black;
+    padding: 15px;
+    border: 2px dashed black;
     border-radius: 6px;
-    border-style: dashed;
-    margin-bottom: 6%;
-    margin-top: 4%;
 }
 
 .strt {
     display: flex;
-    position: absolute;
-    top: 32%;
-    flex-direction: column; /* Stack content vertically */
-    align-items: flex-end;
-    margin-top: 35px;
-    margin-left: 1060px;
-    margin-bottom: 50%;
-    width: 25%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px; /* Add top margin for spacing */
+    margin-bottom: 30px; /* Add bottom margin for spacing */
+    width: 80%;
     background-color: burlywood;
-    border-style: dotted;
-    border-color: blue 2px solid;
+    border: 2px dotted blue;
     border-radius: 3px;
+    padding: 20px;
 }
 
 #btn1 {
-    margin-right: 140px;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 15px; /* Add some space above the button */
 }
 
 .para {
-    margin-left: 10px;
-    margin-top: 8px;
+    margin: 10px 0;
 }
 
-/* Responsive adjustments (as discussed before) */
+/* Media Query for screens smaller than 768px */
 @media screen and (max-width: 768px) {
     .nav {
         width: 95%;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .txt,
     .txt1 {
         width: 95%;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .strt {
-        position: static;
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
-        width: 80%;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    #btn1 {
-        margin-right: 0;
+        width: 95%;
     }
 }
 
+/* Media Query for even smaller screens */
 @media screen and (max-width: 480px) {
-    /* Further adjustments for smaller screens if needed */
+    /* Further adjustments if needed */
 }
