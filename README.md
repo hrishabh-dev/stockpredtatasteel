@@ -3,7 +3,7 @@
 ## Overview
 This project implements a deep learning model to forecast performance metrics for Tata Steel Ltd. It utilizes FastAPI for serving the model and provides a user-friendly web interface built with HTML and CSS. 
 
-You can view the project live at - (https://stockprediction-qott.onrender.com).
+You can view the project live at [Your Website](https://stockprediction-qott.onrender.com).
 
 ## Table of Contents
 - [Description](#description)
@@ -13,6 +13,8 @@ You can view the project live at - (https://stockprediction-qott.onrender.com).
 - [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [License](#license)
+- [Demo](#demo)
+
 ## Description
 In this project, I developed a deep learning model aimed at predicting key performance indicators for Tata Steel Ltd. Initially, I attempted to use Flask for deployment but encountered some issues, which led me to switch to FastAPI. The model achieves impressive performance metrics, with an accuracy of 99%.
 
@@ -21,33 +23,42 @@ To run this project locally, please follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-Install the required dependencies:
-CopyReplit
-pip install -r requirements.txt
-Usage
+   git clone https://github.com/hrishabh-dev/stockpredtatasteel
+   cd stockpredtatasteel
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
 After installing the necessary dependencies, you can start the FastAPI server with the following command:
 
-CopyReplit
+```bash
 uvicorn app:app --reload
-You can then access the web application at http://127.0.0.1:8000.
+```
 
-Model Performance
-Accuracy: 99%
-Mean Squared Error (MSE): 0.36
-Mean Absolute Error (MAE): 0.39
+## Model Performance
+- **Accuracy:** 99%
+- **Mean Squared Error (MSE):** 0.36
+- **Mean Absolute Error (MAE):** 0.39
+
 These results indicate that the model has high predictive accuracy and low error rates, showcasing its effectiveness for the problem at hand.
 
-Deployment
+## Deployment
 The web application is deployed using Render, which allows for seamless hosting of FastAPI applications. The backend server is run using Uvicorn, ensuring efficient handling of requests.
 
-Technologies Used
-Python
-FastAPI
-Uvicorn
-HTML/CSS
-Deep Learning (e.g., TensorFlow, PyTorch, etc.)
-Deployment with Render
-License
-This project is licensed under the GNU General Public License (GPL) v3.0. See the LICENSE file for details.
+## Technologies Used
+- Python
+- FastAPI
+- Uvicorn
+- HTML/CSS
+- Deep Learning (TensorFlow)
+- Deployment with Render
+
+## License
+This project is licensed under the GNU General Public License (GPL) v3.0. See the [LICENSE](LICENSE) file for details.
+
+
+
