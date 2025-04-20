@@ -13,7 +13,6 @@ You can view the project live at [My Website](https://stockprediction-qott.onren
 - [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [License](#license)
-- [Demo](#demo)
 
 ## Description
 In this project, I developed a deep learning model aimed at predicting key performance indicators for Tata Steel Ltd. Initially, I attempted to use Flask for deployment but encountered some issues, which led me to switch to FastAPI. The model achieves impressive performance metrics, with an accuracy of 99%.
