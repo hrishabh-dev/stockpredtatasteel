@@ -54,7 +54,7 @@ threadpoolctl==3.0.0
 typing-inspection==0.4.0
 tzdata>=2025.1,<2026
 typing-extensions>=4.8.0
-tensorflow>=2.13.0,<2.14
+tensorflow==2.13.1
 urllib3==2.0.3
 uvicorn==0.24.0
 waitress==2.0.0
