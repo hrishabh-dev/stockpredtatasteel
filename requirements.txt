@@ -48,13 +48,13 @@ sniffio==1.3.1
 starlette==0.46.2
 tensorboard==2.13.0  # latest compatible
 tensorboard-data-server==0.7.2
-tensorflow==2.13.0    # latest compatible
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==3.0.1
 threadpoolctl==3.0.0
 typing-inspection==0.4.0
-typing_extensions==4.13.0
-tzdata==2023.10
+tzdata>=2025.1,<2026
+typing-extensions>=4.0,<4.6
+tensorflow>=2.13.0,<2.14
 urllib3==2.0.3
 uvicorn==0.24.0
 waitress==2.0.0
