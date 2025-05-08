@@ -19,7 +19,7 @@ idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.6
 joblib==1.4.2
-keras==2.13.0   # corrected
+keras>=2.13.0,<2.14   # corrected
 libclang==18.1.1
 Markdown==3.8
 markdown-it-py==3.0.0
