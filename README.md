@@ -1,63 +1,96 @@
-# Deep Learning Model for Tata Steel Ltd
+# Tata Steel Stock High Price Prediction
 
 ## Overview
-This project implements a deep learning model to forecast performance metrics for Tata Steel Ltd. It utilizes FastAPI for serving the model and provides a user-friendly web interface built with HTML and CSS. 
+This project implements a **machine learning** model (Random Forest), served via FastAPI, to predict the "High" price for Tata Steel Ltd. stock given the "Open" and "Low" prices. The web app provides a simple interface for users and is deployable to cloud platforms like Render.
 
-You can view the project live at [My Website](https://stockprediction-qott.onrender.com).
+**Live Demo:** [https://stockprediction-qott.onrender.com](https://stockprediction-qott.onrender.com)
 
 ## Table of Contents
-- [Description](#description)
+- [Project Description](#project-description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Model Training](#model-training)
 - [Model Performance](#model-performance)
 - [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 
-## Description
-In this project, I developed a deep learning model aimed at predicting key performance indicators for Tata Steel Ltd. Initially, I attempted to use Flask for deployment but encountered some issues, which led me to switch to FastAPI. The model achieves impressive performance metrics, with an accuracy of 99%.
+## Project Description
+
+- **Machine Learning Model:** The project's notebook (`tisc.ipynb`) details the data preparation and training of a RandomForestRegressor to predict the "High" price using "Open" and "Low" as features. RobustScaler is used for feature scaling.
+- **API Backend:** `app.py` is a FastAPI app that loads the trained model (`randomforest_model.pkl`) and scaler (`robust_scaler.pkl`), and provides prediction functionality via web forms and API.
+- **Frontend:** HTML templates in the `templates/` folder (`index.html`, `page2.html`) provide a clean user interface. Static files (CSS, images) are served from `static/`.
 
 ## Installation
-To run this project locally, please follow these steps:
 
-1. Clone the repository:
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/hrishabh-dev/stockpredtatasteel
    cd stockpredtatasteel
    ```
 
-2. Install the required dependencies:
+2. **Install Dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
+   *(A Python virtual environment is recommended.)*
 
 ## Usage
-After installing the necessary dependencies, you can start the FastAPI server with the following command:
 
-```bash
-uvicorn app:app --reload
-```
+1. **Start the FastAPI Server:**
+   ```bash
+   uvicorn app:app --reload
+   ```
+2. **Access the Application:**
+   - Visit [http://localhost:8000](http://localhost:8000) for the web UI.
+   - API docs available at [http://localhost:8000/docs](http://localhost:8000/docs).
+
+## API Endpoints
+
+- `GET /` — Home page (web form).
+- `GET /predict` — Prediction form.
+- `POST /predict` — Submit "Open" and "Low" prices, receive predicted "High" price as a response.
+
+## Model Training
+
+- Data is sourced from a Tata Steel historical dataset.
+- Features: "Open", "Low". Target: "High".
+- Processing in `tisc.ipynb`:
+  - Cleans and preprocesses data.
+  - Trains a RandomForestRegressor with RobustScaler preprocessing.
+  - Evaluates on test data and saves both the model and scaler.
 
 ## Model Performance
-- **Accuracy:** 99%
-- **Mean Squared Error (MSE):** 0.36
-- **Mean Absolute Error (MAE):** 0.39
 
-These results indicate that the model has high predictive accuracy and low error rates, showcasing its effectiveness for the problem at hand.
+- **Mean Squared Error (MSE):** ~0.51
+- **Mean Absolute Error (MAE):** ~0.41
+- **R² Score:** ~0.99
+
+*(Metrics are from notebook evaluation; see `tisc.ipynb` for details.)*
 
 ## Deployment
-The web application is deployed using Render, which allows for seamless hosting of FastAPI applications. The backend server is run using Uvicorn, ensuring efficient handling of requests.
+
+- Hosted on Render at [https://stockprediction-qott.onrender.com](https://stockprediction-qott.onrender.com)
+- To deploy elsewhere, connect your GitHub repo to a cloud platform and use:
+  ```bash
+  uvicorn app:app --host 0.0.0.0 --port 10000
+  ```
 
 ## Technologies Used
-- Python
+
+- Python 3.x
 - FastAPI
 - Uvicorn
-- HTML/CSS
-- Deep Learning (TensorFlow)
-- Deployment with Render
+- Pandas, NumPy, scikit-learn
+- Jinja2 (templating)
+- HTML/CSS (frontend)
+- Render (deployment)
 
 ## License
+
 This project is licensed under the GNU General Public License (GPL) v3.0. See the [LICENSE](LICENSE) file for details.
 
+---
 
-
+*For questions or contributions, please use the GitHub issue tracker.*
