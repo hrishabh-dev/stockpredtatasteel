@@ -1,7 +1,7 @@
 # Tata Steel Stock High Price Prediction
 
 ## Overview
-This project implements a **machine learning** model (Random Forest), served via FastAPI, to predict the "High" price for Tata Steel Ltd. stock given the "Open" and "Low" prices. The web app provides a simple interface for users and is deployable to cloud platforms like Render.
+This project implements a **machine learning** model (Random Forest), served via FastAPI, to predict the "High" price for Tata Steel Ltd. stock given the "Open" and "Low" prices. The web app provides both a user interface and REST API for predictions.
 
 **Live Demo:** [https://stockprediction-qott.onrender.com](https://stockprediction-qott.onrender.com)
 
@@ -14,37 +14,38 @@ This project implements a **machine learning** model (Random Forest), served via
 - [Model Performance](#model-performance)
 - [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
+- [Why Y Scaling Was Used](#why-y-scaling-was-used)
 - [License](#license)
 
 ## Project Description
 
-- **Machine Learning Model:** The project's notebook (`tisc.ipynb`) details the data preparation and training of a RandomForestRegressor to predict the "High" price using "Open" and "Low" as features. RobustScaler is used for feature scaling.
+- **Machine Learning Model:** The project's notebook (`tisc.ipynb`) details the data preparation and training of a RandomForestRegressor to predict the "High" price using "Open" and "Low" as features.
 - **API Backend:** `app.py` is a FastAPI app that loads the trained model (`randomforest_model.pkl`) and scaler (`robust_scaler.pkl`), and provides prediction functionality via web forms and API.
 - **Frontend:** HTML templates in the `templates/` folder (`index.html`, `page2.html`) provide a clean user interface. Static files (CSS, images) are served from `static/`.
 
 ## Installation
 
 1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/hrishabh-dev/stockpredtatasteel
-   cd stockpredtatasteel
-   ```
+    ```bash
+    git clone https://github.com/hrishabh-dev/stockpredtatasteel
+    cd stockpredtatasteel
+    ```
 
 2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(A Python virtual environment is recommended.)*
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(A Python virtual environment is recommended.)*
 
 ## Usage
 
 1. **Start the FastAPI Server:**
-   ```bash
-   uvicorn app:app --reload
-   ```
+    ```bash
+    uvicorn app:app --reload
+    ```
 2. **Access the Application:**
-   - Visit [http://localhost:8000](http://localhost:8000) for the web UI.
-   - API docs available at [http://localhost:8000/docs](http://localhost:8000/docs).
+    - Visit [http://localhost:8000](http://localhost:8000) for the web UI.
+    - API docs available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
 ## API Endpoints
 
@@ -57,9 +58,9 @@ This project implements a **machine learning** model (Random Forest), served via
 - Data is sourced from a Tata Steel historical dataset.
 - Features: "Open", "Low". Target: "High".
 - Processing in `tisc.ipynb`:
-  - Cleans and preprocesses data.
-  - Trains a RandomForestRegressor with RobustScaler preprocessing.
-  - Evaluates on test data and saves both the model and scaler.
+    - Cleans and preprocesses data.
+    - Trains a RandomForestRegressor with RobustScaler preprocessing.
+    - Evaluates on test data and saves both the model and scaler.
 
 ## Model Performance
 
@@ -73,9 +74,9 @@ This project implements a **machine learning** model (Random Forest), served via
 
 - Hosted on Render at [https://stockprediction-qott.onrender.com](https://stockprediction-qott.onrender.com)
 - To deploy elsewhere, connect your GitHub repo to a cloud platform and use:
-  ```bash
-  uvicorn app:app --host 0.0.0.0 --port 10000
-  ```
+    ```bash
+    uvicorn app:app --host 0.0.0.0 --port 10000
+    ```
 
 ## Technologies Used
 
@@ -86,6 +87,12 @@ This project implements a **machine learning** model (Random Forest), served via
 - Jinja2 (templating)
 - HTML/CSS (frontend)
 - Render (deployment)
+
+## Why Y Scaling Was Used
+
+**Y scaling** (scaling the target variable) was used in this project to improve the performance and stability of the Random Forest regression model. In stock price prediction, the target ("High" price) can have a wide range or outliers. Scaling ensures that the model treats all target values uniformly, helps in faster convergence, and prevents bias due to large target values. It also helps when the model is served for real-time predictions, ensuring the output is within a sensible, normalized range, and makes post-processing (inverse transforming to original values) straightforward for accurate user results.
+
+---
 
 ## License
 
