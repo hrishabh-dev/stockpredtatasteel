@@ -14,8 +14,13 @@ async def lifespan(app:FastAPI):
     global scaler_X, scaler_y, loaded_model
     try:
         # Load the correct scalers saved from the standard workflow
+<<<<<<< HEAD
         scaler_X = joblib.load('saved_model/robust_X_standard.pkl')
         scaler_y = joblib.load('saved_model/robust_y_standard.pkl')
+=======
+        scaler_X = joblib.load('robust_X_standard.pkl')
+        scaler_y = joblib.load('robust_y_standard.pkl')
+>>>>>>> ede7f93345ec1e69151c3a60316fa0a94e163b22
         print("Scalers loaded successfully.")
     except Exception as e:
         print(f"Error loading scalers: {e}")
@@ -24,7 +29,11 @@ async def lifespan(app:FastAPI):
 
     try:
         # Load the TensorFlow model saved from the standard workflow
+<<<<<<< HEAD
         loaded_model = tf.keras.models.load_model('saved_model/stock_price_model_standard.keras')
+=======
+        loaded_model = tf.keras.models.load_model('stock_price_model_standard.keras')
+>>>>>>> ede7f93345ec1e69151c3a60316fa0a94e163b22
         print("TensorFlow model loaded successfully.")
     except Exception as e:
         print(f"Error loading model: {e}")
